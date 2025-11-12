@@ -1,0 +1,29 @@
+{
+  "name": "dynasty-telegram-bot",
+  "version": "1.0.0",
+  "description": "A Telegram Bot made by Emmanuel Mojiboye (Dynasty)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emzzy241/dynasty-telegram-bot.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
+  "author": "Mojiboye Emmanuel Oluwole (Dynasty)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emzzy241/dynasty-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/Emzzy241/dynasty-telegram-bot#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
