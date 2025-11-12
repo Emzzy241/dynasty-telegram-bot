@@ -26,6 +26,19 @@ _This is a Telegram bot made by Dynasty whose purpose is to respond to messages 
     npm run start
 ```
 
+4. Search: 'BotFather' on Telegram, and do the following:
+a. Run the command /start to kickstart the botfather
+b. Run the command /new-bot to create a new bot 
+c. Name the bot, e.g; Dynasty Bot or Marco Polo Bot
+d. Choose a username for your bot, you might need to change this multiple times to ensure you are not using an already existing telegram username.
+e. Next, create an .env file and provide the following details into it (you will see this token as soon as your bot is created successfully):
+```sh
+    TELEGRAM_API_TOKEN=your-telegram-bot-token
+    PORT=your-desired-port
+
+```
+f. That's all, your bot has been created successfully. Although when you message your bot, you won't get a response but you might need to build the bot server or use my already written code and host the web service on render or any other alternative.
+
 ## Known Bugs
 _No Known Bugs_
 
