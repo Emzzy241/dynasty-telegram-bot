@@ -54,7 +54,7 @@ app.post("/new-message", function (req, res) {
         responseText = "Welcome to Dynasty Bot! Its great to have you here. Try typing /who-is-dynasty to learn more about Dynasty."
     }
     else if (text === "/who-is-dynasty") {
-        responseText = "Dynasty is a passionate Software Engineer with 3+ years of experience in building scalable softwares. Dynasty is also a type of person who loves to learn new things, explore and keep improving himself. His goal is to be 0.1% better everyday."
+        responseText = "Dynasty is a passionate Software Engineer with 3+ years of experience in building scalable softwares. Dynasty is also a type of person who loves to learn new things, explore and keep improving himself. His goal is to be 0.1% better everyday. And Dynasty also happens to be the creator of this particular bot you are using :)"
     }
     else if (text === "/help") {
         responseText = "Available commands: /start, /who-is-dynasty, /help"
