@@ -1,7 +1,13 @@
+// Importing All Packages using the CommonJS method.
 const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 const axios = require("axios")
+const dotenv = require("dotenv")
+
+dotenv.config()
+
+const TELEGRAM_API_TOKEN = process.env.TELEGRAM_API_TOKEN
 
 app.use(bodyParser.json())
 app.use(
@@ -14,6 +20,12 @@ app.get("/", (req, res)=> {
 
     console.log("Welcome to the Dynasty Telegram Bot.")
     res.end("Welcome to the Dynasty Telegram Bot.")
+})
+
+app.get("/test-token", (req, res) => {
+    console.log(TELEGRAM_API_TOKEN)
+    console.log(`https://api.telegram.org/bot${TELEGRAM_API_TOKEN}/send-message`)
+    res.end("Testing Token Complete")
 })
 
 
@@ -29,7 +41,7 @@ app.post("/new-message", function(req, res) {
 
     // If we have gotten this far, it means that we have received the word "dynasty"
     // Respond by hitting the telegram bot API and responding to the appropriate chat_id with the word "Dynasty is da great!!!!!!!"
-    axios.post("https://api.telegram.org/bot8474933289:AAEg5Pi_XIvgHaYasslJmahWlIJRy3Pty-A/send-message",
+    axios.post(`https://api.telegram.org/bot${TELEGRAM_API_TOKEN}/send-message`,
        {
         chat_id: message.chat.id,
         text: "Dynasty is da greatest!!!!!",
