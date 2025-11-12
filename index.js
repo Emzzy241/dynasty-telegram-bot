@@ -42,7 +42,7 @@ app.post("/new-message", function(req, res) {
 
     // If we have gotten this far, it means that we have received the word "dynasty"
     // Respond by hitting the telegram bot API and responding to the appropriate chat_id with the word "Dynasty is da great!!!!!!!"
-    axios.post(`https://api.telegram.org/bot${TELEGRAM_API_TOKEN}/send-message`,
+    axios.post(`https://api.telegram.org/bot${TELEGRAM_API_TOKEN}/sendMessage`,
        {
         chat_id: message.chat.id,
         text: "Dynasty is da greatest!!!!!",
