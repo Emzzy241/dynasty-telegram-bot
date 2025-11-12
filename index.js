@@ -7,6 +7,7 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
+const PORT = process.env.PORT
 const TELEGRAM_API_TOKEN = process.env.TELEGRAM_API_TOKEN
 
 app.use(bodyParser.json())
@@ -24,7 +25,7 @@ app.get("/", (req, res)=> {
 
 app.get("/test-token", (req, res) => {
     console.log(TELEGRAM_API_TOKEN)
-    console.log(`https://api.telegram.org/bot${TELEGRAM_API_TOKEN}/send-message`)
+    console.log(`https://api.telegram.org/bot${TELEGRAM_API_TOKEN}/sendMessage`)
     res.end("Testing Token Complete")
 })
 
@@ -59,6 +60,6 @@ app.post("/new-message", function(req, res) {
 
 
 // Finally, start our server
-app.listen(3000, ()=> {
-    console.log("Telegram app listening on port 3000!")
+app.listen(PORT, ()=> {
+    console.log(`Telegram app listening on port ${3000}!`)
 })
