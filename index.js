@@ -54,13 +54,36 @@ app.post("/new-message", function (req, res) {
         responseText = "Welcome to Dynasty Bot! Its great to have you here. Try typing /who-is-dynasty to learn more about Dynasty."
     }
     else if (text === "/who-is-dynasty") {
-        responseText = "Dynasty is a passionate Software Engineer with 3+ years of experience in building scalable softwares. Dynasty is also a type of person who loves to learn new things, explore and keep improving himself. His goal is to be 0.1% better everyday. And Dynasty also happens to be the creator of this particular bot you are using :)"
+        responseText = "Emmanuel Mojiboye also known as Dynasty is a passionate Software Engineer with 3+ years of experience in building scalable softwares. \n Dynasty is also a type of person who loves to learn new things, explore and keep improving himself. \n His goal is to be 0.1% better everyday. And Dynasty also happens to be the creator of this particular bot you are using :)"
     }
     else if (text === "/help") {
-        responseText = "Available commands: /start, /who-is-dynasty, /help"
+        responseText = "Available commands: /start, /who-is-dynasty, /help, /info, /status, /links"
     }
     else if (text.includes("dynasty")) {
         responseText = "Dynasty is the greatest!!!!!!!!!!!!!"
+    }
+
+    else if (text === "/info") {
+        responseText = "More about This bot: This bot was built by the amazing Dynasty and it was built thanks to the Telegram Documentation, Online reading resource to ensure the bot works well."
+    }
+
+    else if (text === "/status") {
+        responseText = "Bot is in a good state, thanks for asking about its status."
+    }
+
+    else if (text === "/contact") {
+        // responseText = "Here is a link to a bunch of social media platforms Dynasty makes use of: GitHub: (https://github.com/Emzzy241), Portfolio: (https://emmanuelmojiboye.journoportfolio.com/), LinkedIn (https://www.linkedin.com/in/emmanuel-mojiboye/),  X.com (Twitter): (https://x.com/EmmanuelMOjiboy), Tiktok: (https://www.tiktok.com/@dynasty608), Product Hunt: (https://www.producthunt.com/@Dynasty)"
+        responseText = "Here are the social media platforms Dynasty uses:\n\n" +
+                   "**GitHub:** (https://github.com/Emzzy241)\n" +
+                   "**Portfolio:** (https://emmanuelmojiboye.journoportfolio.com/)\n" +
+                   "**LinkedIn:** (https://www.linkedin.com/in/emmanuel-mojiboye/)\n" +
+                   "**X.com (Twitter):** (https://x.com/EmmanuelMOjiboy)\n" +
+                   "**Tiktok:** (https://www.tiktok.com/@dynasty608)\n" +
+                   "**Product Hunt:** (https://www.producthunt.com/@Dynasty)"
+    }
+
+    else if (text === "/feedback") {
+        responseText = "Enter the feedback you would like to give Dynasty about his bot."
     }
 
     if (responseText) {
