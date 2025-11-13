@@ -79,7 +79,9 @@ app.post("/new-message", function (req, res) {
                    "LinkedIn: (https://www.linkedin.com/in/emmanuel-mojiboye/)\n" +
                    "X.com (Twitter): (https://x.com/EmmanuelMOjiboy)\n" +
                    "Tiktok: (https://www.tiktok.com/@dynasty608)\n" +
-                   "Product Hunt: (https://www.producthunt.com/@Dynasty)"
+                   "Product Hunt: (https://www.producthunt.com/@Dynasty) \n" +
+                   "Youtube: https://www.youtube.com/@codeDynastyStudios \n \n" + 
+                   "Don't forget to throw Dynasty a Follow, a like and subscribe in any of the above " 
     }
 
     else if (text === "/feedback") {
