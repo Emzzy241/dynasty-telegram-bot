@@ -10,6 +10,9 @@ dotenv.config()
 const PORT = process.env.PORT
 const TELEGRAM_API_TOKEN = process.env.TELEGRAM_API_TOKEN
 
+let userState = {}
+let feedbackArray = []
+
 app.use(bodyParser.json())
 app.use(
     bodyParser.urlencoded({
@@ -49,8 +52,32 @@ app.post("/new-message", function (req, res) {
     const chatId = message.chat.id
     let responseText = ""
 
+    if (userState[chatId] === "awaiting_feedback") {
+        if (text === "/cancel") {
+            responseText = "Feedback mode cancelled."
+            delete userState[chatId] // clear the state
+        } else {
+            // Store the feedback
+            const feedbackEntry = {
+                id: feedbackArray.length + 1,
+                user: message.from.id, // ID of the user giving feedback.
+                date: new Date().toISOString(),
+                text: message.text
+            }
+            feedbackArray.push(feedbackEntry)
+
+            responseText = "Thank you for your valuable feedback! It has been recorded."
+            delete userState[chatId]
+
+            // Since we do not have a persistent storage just yet, All I will do is that for taking feedbacks, I will just go to my render console and capture user feedbacks from there.
+            console.log("New Feedback:", feedbackEntry.text)
+            console.log("Time of feedback:", feedbackEntry.date)
+            console.log("Feedback came from:", feedbackEntry.user)
+        }
+    }
+
     // Commands handling logic
-    if (text === "/start") {
+    else if (text === "/start") {
         responseText = "Welcome to Dynasty Bot! Its great to have you here. Try typing /who-is-dynasty to learn more about Dynasty."
     }
     else if (text === "/who-is-dynasty") {
@@ -85,7 +112,9 @@ app.post("/new-message", function (req, res) {
     }
 
     else if (text === "/feedback") {
-        responseText = "Enter the feedback you would like to give Dynasty about his bot."
+        responseText = "Enter the feedback you would like to give Dynasty about his bot. (Type /cancel to exit.)";
+        // Set the user's state to let the next handler know what to expect
+        userState[chatId] = "awaiting_feedback";
     }
 
     if (responseText) {
