@@ -72,7 +72,7 @@ app.post("/new-message", function (req, res) {
             // Since we do not have a persistent storage just yet, All I will do is that for taking feedbacks, I will just go to my render console and capture user feedbacks from there.
             console.log("New Feedback:", feedbackEntry.text)
             console.log("Time of feedback:", feedbackEntry.date)
-            console.log("Feedback came from:", feedbackEntry.user)
+            console.log("Feedback came from user ID:", feedbackEntry.user)
         }
     }
 
@@ -84,7 +84,7 @@ app.post("/new-message", function (req, res) {
         responseText = "Emmanuel Mojiboye also known as Dynasty is a passionate Software Engineer with 3+ years of experience in building scalable softwares. \n Dynasty is also a type of person who loves to learn new things, explore and keep improving himself. \n His goal is to be 0.1% better everyday. And Dynasty also happens to be the creator of this particular bot you are using :)"
     }
     else if (text === "/help") {
-        responseText = "Available commands: /start, /who-is-dynasty, /help, /info, /status, /contact"
+        responseText = "Available commands: /start, /who-is-dynasty, /help, /info, /status, /contact, /feedback"
     }
     else if (text.includes("dynasty")) {
         responseText = "Dynasty is the greatest!!!!!!!!!!!!!"
