@@ -57,7 +57,7 @@ app.post("/new-message", function (req, res) {
         responseText = "Emmanuel Mojiboye also known as Dynasty is a passionate Software Engineer with 3+ years of experience in building scalable softwares. \n Dynasty is also a type of person who loves to learn new things, explore and keep improving himself. \n His goal is to be 0.1% better everyday. And Dynasty also happens to be the creator of this particular bot you are using :)"
     }
     else if (text === "/help") {
-        responseText = "Available commands: /start, /who-is-dynasty, /help, /info, /status, /contact, /contact"
+        responseText = "Available commands: /start, /who-is-dynasty, /help, /info, /status, /contact"
     }
     else if (text.includes("dynasty")) {
         responseText = "Dynasty is the greatest!!!!!!!!!!!!!"
@@ -74,12 +74,12 @@ app.post("/new-message", function (req, res) {
     else if (text === "/contact") {
         // responseText = "Here is a link to a bunch of social media platforms Dynasty makes use of: GitHub: (https://github.com/Emzzy241), Portfolio: (https://emmanuelmojiboye.journoportfolio.com/), LinkedIn (https://www.linkedin.com/in/emmanuel-mojiboye/),  X.com (Twitter): (https://x.com/EmmanuelMOjiboy), Tiktok: (https://www.tiktok.com/@dynasty608), Product Hunt: (https://www.producthunt.com/@Dynasty)"
         responseText = "Here are the social media platforms Dynasty uses:\n\n" +
-                   "**GitHub:** (https://github.com/Emzzy241)\n" +
-                   "**Portfolio:** (https://emmanuelmojiboye.journoportfolio.com/)\n" +
-                   "**LinkedIn:** (https://www.linkedin.com/in/emmanuel-mojiboye/)\n" +
-                   "**X.com (Twitter):** (https://x.com/EmmanuelMOjiboy)\n" +
-                   "**Tiktok:** (https://www.tiktok.com/@dynasty608)\n" +
-                   "**Product Hunt:** (https://www.producthunt.com/@Dynasty)"
+                   "GitHub: (https://github.com/Emzzy241)\n" +
+                   "Portfolio: (https://emmanuelmojiboye.journoportfolio.com/)\n" +
+                   "LinkedIn: (https://www.linkedin.com/in/emmanuel-mojiboye/)\n" +
+                   "X.com (Twitter): (https://x.com/EmmanuelMOjiboy)\n" +
+                   "Tiktok: (https://www.tiktok.com/@dynasty608)\n" +
+                   "Product Hunt: (https://www.producthunt.com/@Dynasty)"
     }
 
     else if (text === "/feedback") {
